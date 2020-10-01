@@ -15,4 +15,4 @@ install: # => 5
 before_script: # => 6
   - mysql -e 'create database test;' -u root
 script: # => 7
-  - python manage.py test
+  - python manage.py test lists
