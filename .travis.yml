@@ -19,7 +19,5 @@ after_success:
   - coveralls
 deploy:
   provider: heroku
-  api_key:
-    secure: "39725a8f-2858-44d2-b5e6-a03e1e5f9e8b"
   app: stormy-falls-27162
   on: master-prod
