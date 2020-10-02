@@ -2,7 +2,7 @@ language: python
 addons:
   - firefox: latest
 python:
-  - "3.6"
+  - "3.7.4"
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
   - mkdir geckodriver
@@ -13,3 +13,5 @@ services:
   - xvfb
 install:
   - pip install -r requirements.txt
+script:
+  - python manage.py test lists
