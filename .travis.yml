@@ -21,5 +21,5 @@ deploy:
   provider: heroku
   api_key:
     secure: "fde06a33-398d-4967-bd63-629928a7aa2f"
-  app: django-tdd-app
+  app: stormy-falls-27162
   on: master-prod
