@@ -22,3 +22,4 @@ deploy:
   api_key:
     secure: "fde06a33-398d-4967-bd63-629928a7aa2f"
   app: django-tdd-app
+  on: master-prod
