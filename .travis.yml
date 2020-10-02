@@ -14,4 +14,6 @@ services:
 install:
   - pip install -r requirements.txt
 script:
-  - python manage.py test lists
+  - coverage run manage.py test
+after_success:
+  - coveralls
