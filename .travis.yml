@@ -20,6 +20,6 @@ after_success:
 deploy:
   provider: heroku
   api_key:
-    secure: "7JRlSK1LJQMzS0UEci8ySQ"
+    secure: "dbeee178-a3d4-4f48-952f-24a5218fde9f"
   app: stormy-falls-27162
   on: master-prod
