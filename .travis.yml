@@ -1,23 +1,25 @@
 language: python
 addons:
-  - firefox: latest
+- firefox: latest
 python:
-  - "3.7.4"
+- 3.7.4
 before_install:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
-  - mkdir geckodriver
-  - tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.25.0-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
 dist: xenial
 services:
-  - xvfb
+- xvfb
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - coverage run manage.py test
+- coverage run manage.py test
 after_success:
-  - coveralls
+- coveralls
 deploy:
   provider: heroku
   app: stormy-falls-27162
+  api_key:
+    secure: cG7DJ3Y48xhE8mZGc6RumnrEWPmWANnzZI4WNWnj6KIODREqAScvwwDT2EYxXteE6vaatiYaL86wudtoNMQxR05jgo3J9Kx95GfLwnrQPiDTOtfAVUM7d/u0cCUkw8wjts86lTg1q2zFk/Yy843aaTXNiIkKBBpq4w2lpjrq6PG0GenfjEBqMJhLkjuTIlxF0f6EY7xT6OAMZlWLql51/dep2O/yBOUJlXp3F/T9vMYr3h27yWdeDQkpyq+YvX5y9MRSovxM7eRCOKo0pBI5aYTbABzVNy0v/dLyjiZkFdT/w+WGwNyplXmN9QC0uSe6ClmTxRGNOTwsih2SPSid/n3p2IGtyGDIJoYZRbejU5nwrtEHqQoAKRsCng+LoItXiqI9JhD1Tv2P0EGv2udkJRa3lSDE+LZto4qT3elrH1aUhlB10bWgRtBa/HTatS5oG0QTRdpB01lPCsrpwIlJujTxPKIbEzh3CZr4ekxMEGRrf4FkE/6nZ+NlUCoMlOctrMMWCGp+igbHrG0+VY6rGQFtQMe6gW+s/ObylDQGP0oBJKJFMkbXpCSmjoo34JFQEYcFLqjPbKVWWGahGmvt5oBWDL/KF55aJ4z03J6/JZikd/WcSMCvjjL+P5ry3yqremMYZRJu5JY+WHH1H87DdZARplKH0i+syzxypz+6dKQ=
   on: master-prod
