@@ -27,9 +27,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vric1yi*qedxex)^b0@8_&b5of97*qwt44uk4gy69z-qc=48kn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'https://stormy-falls-27162.herokuapp.com',
+]
 
 # Application definition
 
